@@ -35,7 +35,13 @@ fun todoTask3(collection: Collection<Int>) = TODO(
     """,
     references = { JavaCode3().task3(collection) })
 
-fun task3(collection: Collection<Int>): Boolean = todoTask3(collection)
+fun task3(collection: Collection<Int>): Boolean {
+    // Both are the same with different syntax
+    /*
+    return collection.any({i -> i % 42 == 0})
+     */
+    return collection any {i -> i % 42 == 0}
+}
 
 
 
