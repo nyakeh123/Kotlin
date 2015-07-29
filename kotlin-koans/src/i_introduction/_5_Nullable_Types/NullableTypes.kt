@@ -53,22 +53,20 @@ fun struggleAgainstNPE() {
 fun fail() = throw Exception()
 
 fun todoTask5(client: Client?, message: String?, mailer: Mailer) = TODO(
-    """
+        """
         Task 5.
         Rewrite JavaCode5.sendMessageToClient to kotlin (using only one 'if').
         Declarations of Client, PersonalInfo and Mailer are given below.
     """,
-    references = { JavaCode5().sendMessageToClient(client, message, mailer) }
+        references = { JavaCode5().sendMessageToClient(client, message, mailer) }
 )
 
-fun sendMessageToClient(
-        client: Client?, message: String?, mailer: Mailer
-) {
+fun sendMessageToClient(client: Client?, message: String?, mailer: Mailer) {
     todoTask5(client, message, mailer)
 }
 
-class Client (val personalInfo: PersonalInfo?)
-class PersonalInfo (val email: String?)
+class Client(val personalInfo: PersonalInfo?)
+class PersonalInfo(val email: String?)
 
 interface Mailer {
     fun sendMessage(email: String, message: String)
