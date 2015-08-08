@@ -33,5 +33,13 @@ fun todoTask6(expr: Expr) = TODO(
     """,
     references = { JavaCode6().print(expr); syntax.ifWhenExpressions.whenWithoutArgument(42) })
 
-fun print(expr: Expr): String = todoTask6(expr)
+fun print(expr: Expr): String {
+    val result = when (expr) {
+        is Num -> "" + expr.value
+        is Sum -> print(expr.left) + " + " + print(expr.right)
+        else -> "Don't know"
+    }
+
+    return result
+}
 
